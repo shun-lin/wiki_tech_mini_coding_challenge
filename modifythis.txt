@@ -1,4 +1,5 @@
 # Do not modify lines start with hashtag
+# only submit your script (i.e. shun.py), pull request to the repo https://github.com/shun-lin/wiki_tech_mini_coding_challenge
 
 # both assignment should be done using the same python file
 
