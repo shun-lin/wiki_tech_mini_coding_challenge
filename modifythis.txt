@@ -1,0 +1,27 @@
+# Do not modify lines start with hashtag
+
+# both assignment should be done using the same python file
+
+# Assignment 1: find and change all dirty numbers (anything except 0)to 0
+# also print out each of the below line in the below format
+# before -> after
+# example: 0000900000 -> 0000000000
+# Do not hard code!
+
+0000900000
+0100020102
+0001010020
+0010000100
+0010010000
+0201000100
+7000100010
+0002001000
+0010000000
+0002000100
+
+# Assignment 2: Create a file using the script you wrote
+# Named this txt file you generated using your first name, i.e. shun.txt
+# 1st line: Your full name (can hard code)
+# 2nd - 6th line: Your favorite color repeated once in each line (use for loop plz)
+# 7th line: a random integer number from 1 to 100 (use random)
+# next lines: generate an identity matrix with n = the random number generated above
