@@ -16,7 +16,6 @@ def remove_dirties():
 				write_to_file(lines)
 				print_changes(old, new)
 
-
 def write_to_file(lines):
 	outfile = open('modifythis.txt', 'w')
 	outfile.writelines(lines)
