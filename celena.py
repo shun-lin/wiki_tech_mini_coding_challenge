@@ -1,42 +1,40 @@
-
-import random
+import random, re
 
 #ASSIGNMENT 1
 def print_changes(old, new): 
 	print(old + ' -> '+ new)
 
 def remove_dirties():
-	with open('wiki_tech_mini_coding_challenge-master/modifythis.txt', 'r+') as f:
+	with open('modifythis.txt', 'r+') as f:
 		lines = f.readlines()
-		for line_num in range(0, len(lines)):
+		for line_num in range(len(lines)):
 			curr_line = lines[line_num].strip()
 			if curr_line != '' and curr_line[0] != '#':
-				old = curr_line
-				new = ''
-				for x in range(0,len(curr_line)):
-					if curr_line[x] != '0':
-						new += '0'
-					else:
-						new += curr_line[x]
+				old, new = curr_line, ''
+				new = re.sub('[^0\n', '0', curr_line)
 				lines[line_num] = new + '\n'
-				outfile = open('wiki_tech_mini_coding_challenge-master/modifythis.txt', 'w')
-				outfile.writelines(lines)
-				outfile.close
+				write_to_file(lines)
 				print_changes(old, new)
-		
+
+
+def write_to_file(lines):
+	outfile = open('modifythis.txt', 'w')
+	outfile.writelines(lines)
+	outfile.close
+
 
 #ASSIGNMENT 2
 def generate_celena_file():
-	outfile = open ('wiki_tech_mini_coding_challenge-master/celena.txt', 'w')
+	outfile = open ('celena.txt', 'w')
+
 	rand_int = random.randrange(0, 100)
 
 	#Creates identity matrix of rand_int size
 	matrix=[['1' if x == y else '0' for y in range(rand_int)] for x in range(rand_int)]
-
 	string_matrix = make_string_matrix(matrix)
 
 	contents = ['Celena Chang\n', 
-				['green\n' for x in range(0,5)],
+				['green\n' for x in range(5)],
 				str(rand_int) + '\n',
 				string_matrix]
 	
