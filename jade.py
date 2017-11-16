@@ -2,6 +2,10 @@
 import re, random
 infile = open('modifythis.txt', 'r')
 
+def process(line):
+    zero = '0'
+    return re.sub('[^0]*', zero, line)
+
 # Processing text files by line is typical but processing binary files by line
 # is not. When processing binary files use .read(), .seek(), and .tell()
 for line in infile:
@@ -10,14 +14,11 @@ for line in infile:
     data = process(line.rstrip('\r\n'))
 
     # Write the processed line to standard out.
-    print %s + '->' %s (line, data)
+    print "%s -> %s" % (line, data)
 
 # Close the file because we are done with it.
 infile.close()
 
-def process(line):
-    zero = '0'
-    return re.sub('[^0]*', zero, line)
 
 outfile = open('jade.txt', 'w')
 outfile.write("Jade Yen")
