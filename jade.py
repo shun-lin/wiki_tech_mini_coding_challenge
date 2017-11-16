@@ -15,7 +15,7 @@ for line in infile:
 
     # Write the processed line to standard out.
     # print "{} {}".format(line, data)
-    print line + "->" data
+    print (line + "->" data)
     # print "%s -> %s" % (line, data)
 
 # Close the file because we are done with it.
