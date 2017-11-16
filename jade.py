@@ -14,7 +14,8 @@ for line in infile:
     data = process(line.rstrip('\r\n'))
 
     # Write the processed line to standard out.
-    print "%s -> %s" % (line, data)
+    print "{} {}".format(line, data)
+    # print "%s -> %s" % (line, data)
 
 # Close the file because we are done with it.
 infile.close()
