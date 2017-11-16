@@ -11,11 +11,12 @@ def process(line):
 for line in infile:
     # Strip any line endings from the line(\r, \n, or \r\n) then process the
     # line using the process_line function
-    data = process(line.rstrip('\r\n'))
+    if (line[0] != '#'):
+        data = process(line.rstrip('\r\n'))
 
-    # Write the processed line to standard out.
-    # print "{} {}".format(line, data)
-    print (line + "->" + data)
+        # Write the processed line to standard out.
+        # print "{} {}".format(line, data)
+        print (line + "->" + data)
     # print "%s -> %s" % (line, data)
 
 # Close the file because we are done with it.
