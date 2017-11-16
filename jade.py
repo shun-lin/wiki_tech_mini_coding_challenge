@@ -30,7 +30,7 @@ for index in range(6):
     outfile.write("I don't have one")
 
 random_number = random.randint(1, 101)
-outfile.write(Integer.toString(random_number))
+outfile.write(str(random_number))
 
 def identity(n):
     for i in range(n):
